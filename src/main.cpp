@@ -4,7 +4,7 @@
 *-------------------------------------------------------------------------------
 *       Filename:  main.cpp
 *
-*    Description:  theSearchers a simple, plattform agnostic
+*    Description:  theSearchers a simple, platform-agnostic
 *                  search tool written in modern cpp.
 *
 *        Version:  0.1
