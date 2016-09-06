@@ -81,6 +81,11 @@ endif ()
 SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fdiagnostics-color=always")
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fdiagnostics-color=always")
 
+find_package(
+Boost
+1.58.0
+REQUIRED
+)
 
 INCLUDE_DIRECTORIES(
 )
