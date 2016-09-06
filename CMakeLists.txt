@@ -88,6 +88,7 @@ REQUIRED
 )
 
 INCLUDE_DIRECTORIES(
+src/GSL/gsl/
 )
 
 find_program(iwyu_path NAMES include_what-you-use iwyu)
