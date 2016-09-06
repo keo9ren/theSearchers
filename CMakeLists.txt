@@ -83,7 +83,7 @@ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fdiagnostics-color=always")
 
 find_package(
 Boost
-1.58.0
+1.61.0
 REQUIRED
 )
 
