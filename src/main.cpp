@@ -18,15 +18,19 @@
 *
 */
 /* clang-format on */
+#include <exception>
 #include <iostream>
 
-int main(int argc, char *argv[])
-{
-    using std::cout;
-    using std::endl;
+int main(int argc, char *argv[]) {
+  using std::cout;
+  using std::endl;
+  using std::exception;
 
+  try {
     cout << "theSearchers" << endl;
+  } catch (exception &e) {
+    cout << e.what() << endl;
+  }
 
-    
-    return 0;
+  return 0;
 }
