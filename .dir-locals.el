@@ -6,6 +6,7 @@
 ;;; Code:
 ((nil . ((cmake-ide-build-dir . "build")
          (cmake-ide-flags-c . (
+         ; compiler -v -xc /dev/null -fsyntax-only
          ;arch g++                        
          ;"-I/usr/lib/gcc/x86_64-pc-linux-gnu/6.1.1/include"
          ;"-I/usr/local/include"
@@ -16,6 +17,7 @@
          "-I/usr/include"
          ))
          (cmake-ide-flags-c++ . (
+         ; compiler -v -xc++ /dev/null -fsyntax-only
          ;arch g++                        
          ;"-I/usr/lib/gcc/x86_64-pc-linux-gnu/6.1.1/../../../../include/c++/6.1.1"
          ;"-I/usr/lib/gcc/x86_64-pc-linux-gnu/6.1.1/../../../../include/c++/6.1.1/x86_64-pc-linux-gnu"
