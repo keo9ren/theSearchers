@@ -18,6 +18,7 @@
 *
 */
 /* clang-format on */
+#include <boost/program_options.hpp>
 #include <exception>
 #include <iostream>
 
@@ -25,9 +26,11 @@ int main(int argc, char *argv[]) {
   using std::cout;
   using std::endl;
   using std::exception;
+  namespace po = boost::program_options;
 
   try {
     cout << "theSearchers" << endl;
+    po::options_description desc{};
   } catch (exception &e) {
     cout << e.what() << endl;
   }

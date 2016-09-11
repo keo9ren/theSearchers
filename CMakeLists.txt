@@ -100,6 +100,7 @@ find_package(
 Boost
 1.61.0
 REQUIRED
+program_options
 )
 
 INCLUDE_DIRECTORIES(
@@ -115,7 +116,7 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/src)
 
 add_executable(${CMAKE_PROJECT_NAME} ${SRCS})
 set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY CXX_INCLUDE_WHAT_YOU_USE ${iwyu_path})
-target_link_libraries (${CMAKE_PROJECT_NAME})
+target_link_libraries (${CMAKE_PROJECT_NAME} ${Boost_LIBRARIES})
 
 #include(CTest)
 #add_test(${CMAKE_PROJECT_NAME} ${CMAKE_PROJECT_NAME})
