@@ -25,14 +25,15 @@
 int main(int argc, char *argv[]) {
   using std::cout;
   using std::endl;
+  using std::cerr;
   using std::exception;
   namespace po = boost::program_options;
 
   try {
     cout << "theSearchers" << endl;
     po::options_description desc{};
-  } catch (exception &e) {
-    cout << e.what() << endl;
+  } catch (const exception &e) {
+    cerr << e.what() << endl;
   }
 
   return 0;
