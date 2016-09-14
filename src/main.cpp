@@ -18,22 +18,26 @@
 *
 */
 /* clang-format on */
-#include <boost/program_options.hpp>
 #include <exception>
 #include <iostream>
+#include <regex>
+#include "inputHandler.hpp"
 
 int main(int argc, char *argv[]) {
   using std::cout;
   using std::endl;
   using std::cerr;
   using std::exception;
-  namespace po = boost::program_options;
+  using std::regex;
+  namespace ih = searchers::input::inputHandler;
 
   try {
     cout << "theSearchers" << endl;
-    po::options_description desc{};
+    ih::inHandler hi{argc, argv};
+    hi.handle();
+    cout << "End of Search" << endl;
   } catch (const exception &e) {
-    cerr << e.what() << endl;
+    cout << e.what() << endl;
   }
 
   return 0;

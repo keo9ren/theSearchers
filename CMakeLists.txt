@@ -24,7 +24,7 @@ ENDIF()
 IF(DEFINED SAN)
    SET(SAN ${SAN} CACHE STRING "Sanitizer to use in DEBUG mode.")
 ELSE()
-   SET(SAN "-fsanitize=address,undefined" CACHE STRING "Sanitizer to use in DEBUG mode.")
+#   SET(SAN "-fsanitize=address,undefined" CACHE STRING "Sanitizer to use in DEBUG mode.")
 ENDIF()
 
 IF(DEFINED CMAKE_C_COMPILER)
@@ -105,6 +105,7 @@ program_options
 
 INCLUDE_DIRECTORIES(
 src/GSL/gsl/
+src/input/
 )
 
 find_program(iwyu_path NAMES include_what-you-use iwyu)
@@ -113,6 +114,7 @@ message(FATAL_ERROR "no iwyu")
 endif()
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/src)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/input)
 
 add_executable(${CMAKE_PROJECT_NAME} ${SRCS})
 set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY CXX_INCLUDE_WHAT_YOU_USE ${iwyu_path})
