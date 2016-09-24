@@ -101,20 +101,28 @@ Boost
 1.61.0
 REQUIRED
 program_options
+filesystem
+system
+#interprocess
 )
 
-INCLUDE_DIRECTORIES(
-src/GSL/gsl/
-src/input/
-)
 
 find_program(iwyu_path NAMES include_what-you-use iwyu)
 if(NOT iwyu_path)
 message(FATAL_ERROR "no iwyu")
 endif()
 
+INCLUDE_DIRECTORIES(
+src/GSL/gsl/
+src/input/
+src/regex/
+src/readfile
+)
+
 add_subdirectory(${CMAKE_SOURCE_DIR}/src)
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/input)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/regex)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/readfile)
 
 add_executable(${CMAKE_PROJECT_NAME} ${SRCS})
 set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY CXX_INCLUDE_WHAT_YOU_USE ${iwyu_path})
